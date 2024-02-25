@@ -104,10 +104,10 @@ namespace Notepad
         }
         private void PrintMethod(object sender, EventArgs e)
         {
-            PrintDocument print = new PrintDocument();
-            print.PrintPage += PrintPage;
+            PrintDocument printDocument = new PrintDocument();
             PrintDialog printDialog = new PrintDialog();
-            printDialog.Document = print;
+            printDocument.PrintPage += PrintPage;
+            printDialog.Document = printDocument;
             if (printDialog.ShowDialog() == DialogResult.OK)
             {
                 printDialog.Document.Print();
